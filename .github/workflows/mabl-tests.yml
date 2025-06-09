@@ -1,0 +1,25 @@
+name: Mabl Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  run-mabl-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Mabl Tests
+        uses: mablhq/github-run-tests-action@v1
+        with:
+          application-id: f5SiGDh4DAnF80ZUeoDcLQ-a
+          environment-id: kQwkVWlhF876qUtB2ginoQ-e
+        env:
+          MABL_API_KEY: yNX46537JBAbuyc9hFYVfA
